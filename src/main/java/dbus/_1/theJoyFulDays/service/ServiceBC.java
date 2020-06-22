@@ -1,7 +1,7 @@
 package dbus._1.theJoyFulDays.service;
 
-import dbus._2.firstProductionIssue.type.B;
-import dbus._2.firstProductionIssue.type.C;
+import dbus._1.theJoyFulDays.type.B;
+import dbus._1.theJoyFulDays.type.C;
 
 public class ServiceBC {
 

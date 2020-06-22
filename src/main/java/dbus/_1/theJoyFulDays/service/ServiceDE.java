@@ -1,7 +1,7 @@
 package dbus._1.theJoyFulDays.service;
 
-import dbus._2.firstProductionIssue.type.D;
-import dbus._2.firstProductionIssue.type.E;
+import dbus._1.theJoyFulDays.type.D;
+import dbus._1.theJoyFulDays.type.E;
 
 public class ServiceDE {
 

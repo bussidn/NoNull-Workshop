@@ -1,7 +1,7 @@
 package dbus._1.theJoyFulDays;
 
 import dbus._1.theJoyFulDays.service.*;
-import dbus._2.firstProductionIssue.type.*;
+import dbus._1.theJoyFulDays.type.*;
 
 import java.util.function.Function;
 
@@ -15,7 +15,7 @@ public class Application {
     private final Function<F, G> serviceFG;
 
 
-    public Application() {
+    Application() {
         serviceAB = new ServiceAB()::serviceAB;
         serviceBC = new ServiceBC()::serviceBC;
         serviceCD = new ServiceCD()::serviceCD;
@@ -24,7 +24,7 @@ public class Application {
         serviceFG = new ServiceFG()::serviceFG;
     }
 
-    public G run(A providedA) {
+    G run(A providedA) {
         return serviceAB
                 .andThen(serviceBC)
                 .andThen(serviceCD)
