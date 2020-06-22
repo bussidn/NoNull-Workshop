@@ -1,4 +1,4 @@
-package dbus._1.theJoyFulDays.service;
+package dbus._2.firstProductionIssue.service;
 
 import dbus._2.firstProductionIssue.type.A;
 import dbus._2.firstProductionIssue.type.B;
