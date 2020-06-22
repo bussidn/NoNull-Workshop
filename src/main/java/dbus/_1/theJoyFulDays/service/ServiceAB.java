@@ -6,7 +6,7 @@ import dbus.type.B;
 public class ServiceAB {
 
     public B serviceAB(A a) {
-        return a.next();
+        return a.requestB();
     }
 
 }
