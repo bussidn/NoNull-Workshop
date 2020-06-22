@@ -9,13 +9,30 @@ For simplicity, each service will be represented by a name and a function going 
 It means that serviceAB will be a function going from A to B :
 
 ```java
+public class ServiceAB {
+    
+    B serviceAB(A a);
 
-B serviceAB(A a);
-
+}
 ```
 We will represent such a service like this :
 
 serviceAB : A -> B
 
 
-## 
+# The Joyful Days
+
+You start your application with the core services and compose them together.
+You need to produce a G from a given A.
+
+You use all the following services :
+
+- serviceAB
+- serviceBC
+- serviceCD
+- serviceDE
+- serviceEF
+- serviceFG
+
+to produce your application.
+
