@@ -41,4 +41,4 @@ Each service encapsulate a well-defined business responsibility.
 
 Make yourself familiar with the code of that package.
 
-# Production issues strats to kick in
+# Production issues starts to kick in
