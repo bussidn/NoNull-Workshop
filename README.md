@@ -36,3 +36,9 @@ You use all the following services :
 
 to produce your application.
 
+Look at the code under the first package (_1), it produces the desired behavior.
+Each service encapsulate a well-defined business responsibility.
+
+Make yourself familiar with the code of that package.
+
+# Production issues strats to kick in
