@@ -25,6 +25,7 @@ public class Application {
     }
 
     public G run(A providedA) {
+        serviceAB.apply(providedA);
         return serviceAB
                 .andThen(serviceBC)
                 .andThen(serviceCD)

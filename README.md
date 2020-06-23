@@ -56,3 +56,15 @@ value is stored into a variable before being passed to the next function.
 But they both do the exact same thing. 
 
 # Production issues starts to kick in
+
+OK so your application is in production and handles most cases correctly.
+
+But sometimes, serviceAB is not able to find a B given some values of A.
+Those values are called INVALID. By opposition, the previous working values
+are called VALID.
+
+This is a perfectly normal behavior that was left aside to be able to push
+the current code into production dealing with the nominal cases.
+
+So now the type A contains two 'values', VALID and INVALID and tests cases have been
+updated accordingly
