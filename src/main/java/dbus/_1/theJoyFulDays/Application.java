@@ -33,4 +33,13 @@ public class Application {
                 .andThen(serviceFG)
                 .apply(providedA);
     }
+
+    G moreFamiliarRun(A providedA) {
+        B b = serviceAB.apply(providedA);
+        C c = serviceBC.apply(b);
+        D d = serviceCD.apply(c);
+        E e = serviceDE.apply(d);
+        F f = serviceEF.apply(e);
+        return serviceFG.apply(f);
+    }
 }

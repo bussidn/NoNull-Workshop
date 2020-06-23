@@ -21,4 +21,17 @@ class ApplicationTest {
         assertThat(result).isEqualTo(G.INSTANCE);
     }
 
+    @Test
+    public void application_should_return_G_when_provided_A_when_calling_the_more_familiar_version() {
+        // given
+        Application application = new Application();
+        A a = A.INSTANCE;
+
+        // when
+        G result = application.moreFamiliarRun(a);
+
+        // then
+        assertThat(result).isEqualTo(G.INSTANCE);
+    }
+
 }

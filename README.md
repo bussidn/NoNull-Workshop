@@ -36,9 +36,23 @@ You use all the following services :
 
 to produce your application.
 
-Look at the code under the first package (_1), it produces the desired behavior.
+Look at the code under the first package (_1), and particularly the run function
+in the Application class. It produces the desired behavior.
+
 Each service encapsulate a well-defined business responsibility.
 
 Make yourself familiar with the code of that package.
+
+The run method is composing all the services as if they were functions
+to create a bigger function :
+```
+A -> B -> C -> D -> E -> F -> G
+A --------------------------> G
+```
+
+The second version called "moreFamiliarRun" is a version where the intermediary
+value is stored into a variable before being passed to the next function.
+
+But they both do the exact same thing. 
 
 # Production issues starts to kick in
