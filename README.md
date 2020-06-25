@@ -98,9 +98,13 @@ a null value or not.
 So your team heard that Optional may help on that point.
 
 ```
-Change the code so that requestB now returns Optional<B> instead of B.
-Then use 'isPresent' and 'get' methods to make the safety checks
-on the Application class.
+Change the code in order to use Optional
+
+You should change serviceAB so it now returns Optional<B> instead of B.
+Use static factory methods "Optional#of" and "Optional#empty"
+
+Then use "Optional#isPresent" and "Optional#get" methods to make the safety checks
+in the Application class.
 
 * This part is a refactoring phase, the tests pass as it is and should remain so
 ```
