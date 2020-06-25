@@ -91,6 +91,12 @@ So far, nothing comes out of the ordinary, simple and robust java code.
 
 We will open a parenthesis. What if Optional was made available at this point ?
 
+Optional is a generic container that represent the fact that a value may be absent.
+Seems perfect for our use case.
+You can view it as a List of 0 or 1 element.
+For example, an Optional<String> may contain a string, or not. But you KNOW that
+the value may be absent.
+
 If you look at all the services A -> B, B -> C and so forth, they all look the same.
 From the pure API point of view, there's nothing telling you that ServiceAB may return
 a null value or not.
@@ -103,8 +109,31 @@ Change the code in order to use Optional
 You should change serviceAB so it now returns Optional<B> instead of B.
 Use static factory methods "Optional#of" and "Optional#empty"
 
+Optional.of(t) creates a container with a value inside. That value may not be null.
+Optional.empty() creates an empty container.
+
 Then use "Optional#isPresent" and "Optional#get" methods to make the safety checks
 in the Application class.
 
 * This part is a refactoring phase, the tests pass as it is and should remain so
+* don't forget to change the dependency type, serviceAB will no longer be of type
+A -> B
 ```
+
+Normally, the produced code should look very similar to the code with null checks.
+But you have gained some expressiveness : now anyone knows that service AB may return
+no value, at compile time !
+
+Your team is happy wih the decision and decides to adopt Optional. New code should
+not manipulate null references anymore, only Optionals.
+
+If you think this through, that another good way to avoid NullPointerException :
+
+```
+don't use null !
+```
+
+It is that simple.
+
+
+
