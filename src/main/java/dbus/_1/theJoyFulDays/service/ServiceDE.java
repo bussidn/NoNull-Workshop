@@ -6,7 +6,7 @@ import dbus._1.theJoyFulDays.type.E;
 public class ServiceDE {
 
     public E serviceDE(D d) {
-        return d.fetchE();
+        return E.INSTANCE;
     }
 
 }

@@ -1,9 +1,6 @@
 package dbus._1.theJoyFulDays.type;
 
 public enum B {
-    INSTANCE;
+    INSTANCE
 
-    public C getValue() {
-        return C.INSTANCE;
-    }
 }

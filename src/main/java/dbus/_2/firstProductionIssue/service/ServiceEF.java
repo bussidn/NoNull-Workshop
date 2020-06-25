@@ -6,7 +6,7 @@ import dbus._2.firstProductionIssue.type.F;
 public class ServiceEF {
 
     public F serviceEF(E e) {
-        return e.generateF();
+        return F.INSTANCE;
     }
 
 }

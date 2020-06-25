@@ -6,7 +6,7 @@ import dbus._3.firstContactWithOptional.type.G;
 public class ServiceFG {
 
     public G serviceFG(F f) {
-        return f.findG();
+        return G.INSTANCE;
     }
 
 }

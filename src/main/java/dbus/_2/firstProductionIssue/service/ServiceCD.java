@@ -6,7 +6,7 @@ import dbus._2.firstProductionIssue.type.D;
 public class ServiceCD {
 
     public D serviceCD(C c) {
-        return c.createD();
+        return D.INSTANCE;
     }
 
 }

@@ -6,7 +6,7 @@ import dbus._1.theJoyFulDays.type.B;
 public class ServiceAB {
 
     public B serviceAB(A a) {
-        return a.requestB();
+        return B.INSTANCE;
     }
 
 }

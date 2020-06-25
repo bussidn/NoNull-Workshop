@@ -6,7 +6,7 @@ import dbus._2.firstProductionIssue.type.C;
 public class ServiceBC {
 
     public C serviceBC(B b) {
-        return b.getValue();
+        return C.INSTANCE;
     }
 
 }

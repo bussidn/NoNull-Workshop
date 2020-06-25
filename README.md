@@ -98,7 +98,7 @@ a null value or not.
 So your team heard that Optional may help on that point.
 
 ```
-Change the code so that serviceAB now returns Optional<B> instead of B.
+Change the code so that requestB now returns Optional<B> instead of B.
 Then use 'isPresent' and 'get' methods to make the safety checks
 on the Application class.
 
