@@ -72,6 +72,22 @@ updated accordingly
 ## simple correction
 
 Team Decision : You and your team have decided to use a null value when there is no
-value to be returned. Seems pretty reasonable isn't it ?
+value to be returned. Seems pretty reasonable, isn't it ?
 
-So if you look at the code 
+Once again, I'm giving you the code, all you have to do is look at it.
+Cf. package _2.firstProductionIssue
+But don't worry, you will code in the very next step.
+
+So if you look at the code, there the defective version that you are already familiar with.
+It does not pass the added test.
+There's also the corrected version which does. It consists simply to test is the return value is
+null or not before executing the rest of the code.
+
+Nobody likes those nasty NullPointerException, right ?
+
+So far, nothing comes out of the ordinary, simple and robust java code.
+
+## First contact with Optional
+
+We will open a parenthesis. What if Optional was made available at this point ?
+
