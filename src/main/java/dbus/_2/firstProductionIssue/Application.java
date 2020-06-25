@@ -24,24 +24,24 @@ public class Application {
         serviceFG = new ServiceFG()::serviceFG;
     }
 
-    public G run(A providedA) {
+    public String run(A providedA) {
         B b = serviceAB.apply(providedA);
         C c = serviceBC.apply(b);
         D d = serviceCD.apply(c);
         E e = serviceDE.apply(d);
         F f = serviceEF.apply(e);
-        return serviceFG.apply(f);
+        return serviceFG.apply(f).toString();
     }
 
-    public G correctedRun(A providedA) {
+    public String correctedRun(A providedA) {
         B b = serviceAB.apply(providedA);
         if (b != null) {
             C c = serviceBC.apply(b);
             D d = serviceCD.apply(c);
             E e = serviceDE.apply(d);
             F f = serviceEF.apply(e);
-            return serviceFG.apply(f);
+            return serviceFG.apply(f).toString();
         } else
-            return null;
+            return "G cannot be found";
     }
 }

@@ -19,10 +19,10 @@ class ApplicationTest {
             A a = A.INSTANCE;
 
             // when
-            G result = application.run(a);
+            String result = application.run(a);
 
             // then
-            assertThat(result).isEqualTo(G.INSTANCE);
+            assertThat(result).isEqualTo(G.INSTANCE.toString());
         }
 
         @Test
@@ -32,10 +32,10 @@ class ApplicationTest {
             A a = A.INSTANCE;
 
             // when
-            G result = application.moreFamiliarRun(a);
+            String result = application.moreFamiliarRun(a);
 
             // then
-            assertThat(result).isEqualTo(G.INSTANCE);
+            assertThat(result).isEqualTo(G.INSTANCE.toString());
         }
     }
 

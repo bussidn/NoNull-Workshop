@@ -24,22 +24,23 @@ public class Application {
         serviceFG = new ServiceFG()::serviceFG;
     }
 
-    G run(A providedA) {
+    String run(A providedA) {
         return serviceAB
                 .andThen(serviceBC)
                 .andThen(serviceCD)
                 .andThen(serviceDE)
                 .andThen(serviceEF)
                 .andThen(serviceFG)
+                .andThen(G::toString)
                 .apply(providedA);
     }
 
-    G moreFamiliarRun(A providedA) {
+    String moreFamiliarRun(A providedA) {
         B b = serviceAB.apply(providedA);
         C c = serviceBC.apply(b);
         D d = serviceCD.apply(c);
         E e = serviceDE.apply(d);
         F f = serviceEF.apply(e);
-        return serviceFG.apply(f);
+        return serviceFG.apply(f).toString();
     }
 }

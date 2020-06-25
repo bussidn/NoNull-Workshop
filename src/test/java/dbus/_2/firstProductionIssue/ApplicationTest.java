@@ -22,23 +22,23 @@ class ApplicationTest {
                 A a = A.VALID_INSTANCE;
 
                 // when
-                G result = application.run(a);
+                String result = application.run(a);
 
                 // then
-                assertThat(result).isEqualTo(G.INSTANCE);
+                assertThat(result).isEqualTo(G.INSTANCE.toString());
             }
 
             @Test
-            public void application_should_return_null_when_provided_A_is_not_valid() {
+            public void application_should_return_not_found_message_when_provided_A_is_not_valid() {
                 // given
                 Application application = new Application();
                 A a = A.NON_VALID_INSTANCE;
 
                 // when
-                G result = application.run(a);
+                String result = application.run(a);
 
                 // then
-                assertThat(result).isNull();
+                assertThat(result).isEqualTo("G cannot be found");
             }
         }
 
@@ -52,23 +52,23 @@ class ApplicationTest {
                 A a = A.VALID_INSTANCE;
 
                 // when
-                G result = application.correctedRun(a);
+                String result = application.correctedRun(a);
 
                 // then
-                assertThat(result).isEqualTo(G.INSTANCE);
+                assertThat(result).isEqualTo(G.INSTANCE.toString());
             }
 
             @Test
-            public void application_should_return_null_when_provided_A_is_not_valid() {
+            public void application_should_return_not_found_message_when_provided_A_is_not_valid() {
                 // given
                 Application application = new Application();
                 A a = A.NON_VALID_INSTANCE;
 
                 // when
-                G result = application.correctedRun(a);
+                String result = application.correctedRun(a);
 
                 // then
-                assertThat(result).isNull();
+                assertThat(result).isEqualTo("G cannot be found");
             }
         }
     }
