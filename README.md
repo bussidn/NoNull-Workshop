@@ -91,3 +91,16 @@ So far, nothing comes out of the ordinary, simple and robust java code.
 
 We will open a parenthesis. What if Optional was made available at this point ?
 
+If you look at all the services A -> B, B -> C and so forth, they all look the same.
+From the pure API point of view, there's nothing telling you that ServiceAB may return
+a null value or not.
+
+So your team heard that Optional may help on that point.
+
+```
+Change the code so that serviceAB now returns Optional<B> instead of B.
+Then use 'isPresent' and 'get' methods to make the safety checks
+on the Application class.
+
+* This part is a refactoring phase, the tests pass as it is and should remain so
+```
