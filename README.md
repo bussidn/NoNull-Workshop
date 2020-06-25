@@ -68,3 +68,8 @@ the current code into production dealing with the nominal cases.
 
 So now the type A contains two 'values', VALID and INVALID and tests cases have been
 updated accordingly
+
+## simple correction
+
+Team Decision : You and your team have decided to use a null value when there is no
+value to be returned. Seems pretty reasonable isn't it ?

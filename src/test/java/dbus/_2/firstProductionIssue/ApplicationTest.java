@@ -12,30 +12,64 @@ class ApplicationTest {
     @Nested
     public class _1FirstProductionIssue {
 
-        @Test
-        public void application_should_return_G_when_provided_A_is_valid() {
-            // given
-            Application application = new Application();
-            A a = A.VALID_INSTANCE;
+        @Nested
+        public class defectiveCode {
 
-            // when
-            G result = application.run(a);
+            @Test
+            public void application_should_return_G_when_provided_A_is_valid() {
+                // given
+                Application application = new Application();
+                A a = A.VALID_INSTANCE;
 
-            // then
-            assertThat(result).isEqualTo(G.INSTANCE);
+                // when
+                G result = application.run(a);
+
+                // then
+                assertThat(result).isEqualTo(G.INSTANCE);
+            }
+
+            @Test
+            public void application_should_return_null_when_provided_A_is_not_valid() {
+                // given
+                Application application = new Application();
+                A a = A.NON_VALID_INSTANCE;
+
+                // when
+                G result = application.run(a);
+
+                // then
+                assertThat(result).isNull();
+            }
         }
 
-        @Test
-        public void application_should_return_null_when_provided_A_is_not_valid() {
-            // given
-            Application application = new Application();
-            A a = A.NON_VALID_INSTANCE;
+        @Nested
+        public class CorrectedCode {
 
-            // when
-            G result = application.run(a);
+            @Test
+            public void application_should_return_G_when_provided_A_is_valid() {
+                // given
+                Application application = new Application();
+                A a = A.VALID_INSTANCE;
 
-            // then
-            assertThat(result).isNull();
+                // when
+                G result = application.correctedRun(a);
+
+                // then
+                assertThat(result).isEqualTo(G.INSTANCE);
+            }
+
+            @Test
+            public void application_should_return_null_when_provided_A_is_not_valid() {
+                // given
+                Application application = new Application();
+                A a = A.NON_VALID_INSTANCE;
+
+                // when
+                G result = application.correctedRun(a);
+
+                // then
+                assertThat(result).isNull();
+            }
         }
     }
 }

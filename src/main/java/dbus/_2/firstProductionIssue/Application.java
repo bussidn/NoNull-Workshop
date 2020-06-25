@@ -25,12 +25,23 @@ public class Application {
     }
 
     public G run(A providedA) {
-        return serviceAB
-                .andThen(serviceBC)
-                .andThen(serviceCD)
-                .andThen(serviceDE)
-                .andThen(serviceEF)
-                .andThen(serviceFG)
-                .apply(providedA);
+        B b = serviceAB.apply(providedA);
+        C c = serviceBC.apply(b);
+        D d = serviceCD.apply(c);
+        E e = serviceDE.apply(d);
+        F f = serviceEF.apply(e);
+        return serviceFG.apply(f);
+    }
+
+    public G correctedRun(A providedA) {
+        B b = serviceAB.apply(providedA);
+        if (b != null) {
+            C c = serviceBC.apply(b);
+            D d = serviceCD.apply(c);
+            E e = serviceDE.apply(d);
+            F f = serviceEF.apply(e);
+            return serviceFG.apply(f);
+        } else
+            return null;
     }
 }
