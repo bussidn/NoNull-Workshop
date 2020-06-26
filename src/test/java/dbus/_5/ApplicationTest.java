@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ApplicationTest {
 
     @Nested
-    public class N {
+    public class SequencedMaps {
 
 
         @Test
