@@ -25,7 +25,37 @@ public class Application {
     }
 
     public String run(A providedA) {
+        B b = serviceAB.apply(providedA);
+        if(b != null) {
+            C c = serviceBC.apply(b);
+            if(c != null) {
+                D d = serviceCD.apply(c);
+                if(d != null) {
+                    E e = serviceDE.apply(d);
+                    if(e != null) {
+                        F f = serviceEF.apply(e);
+                        if(f !=  null) {
+                            G g = serviceFG.apply(f);
+                            if(g != null)
+                                return g.toString();
+                        }
+                    }
+                }
+            }
+        }
         return "G cannot be found";
+    }
+
+    public static Application with(Function<Builder, Builder> config) {
+        return config.apply(Application.builder()).build();
+    }
+
+    static Application passingApplication() {
+        return builder().build();
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
     public static class Builder {
