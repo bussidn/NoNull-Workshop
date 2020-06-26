@@ -50,7 +50,7 @@ class ApplicationTest {
             A a = A.VALID_INSTANCE;
 
             // when
-            String result = application.run(a);
+            String result = application.runWithOnlyOneMap(a);
 
             // then
             assertThat(result).isEqualTo(G.INSTANCE.toString());
@@ -63,7 +63,7 @@ class ApplicationTest {
             A a = A.NON_VALID_INSTANCE;
 
             // when
-            String result = application.run(a);
+            String result = application.runWithOnlyOneMap(a);
 
             // then
             assertThat(result).isEqualTo("G cannot be found");
