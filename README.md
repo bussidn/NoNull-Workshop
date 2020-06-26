@@ -121,7 +121,7 @@ A -> B
 ```
 
 Normally, the produced code should look very similar to the code with null checks.
-But you have gained some expressiveness : now anyone knows that service AB may return
+You have gained some expressiveness : now anyone knows that service AB may return
 no value, at compile time !
 
 Your team is happy wih the decision and decides to adopt Optional. New code should
@@ -137,5 +137,15 @@ It is that simple.
 
 ## Improving Composition
 
+This time, you will have to modify the "Application#run" method only.
+You've heard on some blog that "Optional#isPresent" and "Optional#get" should
+be avoided.
 
+We'll see why later.
+
+```
+Refactor "Application#run" method.
+The only methods from Optional you should use are
+"Optional#map" and "Optional#orElse"
+```
 
