@@ -143,9 +143,44 @@ be avoided.
 
 We'll see why later.
 
+Just notice that we start with the following situation :
+
+We have a function A -> Optional[B] and we have a
+series of Functions: B -> C -> D -> E -> F that we want to apply if the optional
+is not empty.
+
+That series of functions can be seen as one Function B -> F.
+
+The problem is that :
+- **f1**:A -> Optional[B]
+
+and
+
+- **f2**:B -> F
+
+cannot be composed because the
+return type of **f1** does not match the entry type of **f2**.
+
+
 ```
 Refactor "Application#run" method.
 The only methods from Optional you should use are
 "Optional#map" and "Optional#orElse"
 ```
+
+Normally, your code should look kind of like the very first "Application#run"
+implementation. The one with function composition.
+
+If it doesn't, look at the two solutions on package _5.
+
+The code does not explicitly check presence or absence of value. It does not
+access the encapsulated value either.
+
+Instead, now we **tell** the Optional what transformation (function) we would like
+to apply to the value inside. 
+
+So what we did was to manage to compose **f1** and **f2** thanks to "Optional#map"
+function which knows how to do it.
+
+That's why this chapter is called "improving composition".
 
