@@ -19,6 +19,12 @@ We will represent such a service like this :
 
 serviceAB : A -> B
 
+The different sections below each matches one package that contains a copy of the
+different versions of the production and test code. Some are here only to be watch,
+other are there to be refactored.
+
+In any case, in any section I refer to the code dedicated to that section.
+(if there's exception, I'll try to make them obvious)
 
 # The Joyful Days
 
@@ -53,7 +59,7 @@ A --------------------------> G
 The second version called "moreFamiliarRun" is a version where the intermediary
 value is stored into a variable before being passed to the next function.
 
-But they both do the exact same thing. 
+But they both do the exact same thing.
 
 # Production issues starts to kick in
 
@@ -184,3 +190,33 @@ function which knows how to do it.
 
 That's why this chapter is called "improving composition".
 
+## The long run
+
+Let's get back a little. Imagine your team have not adopted Optional finally.
+
+The life of Application has gone for a while, and you had to deal with
+other production NullPointerExceptions.
+
+So you dealt with them the classic way, by testing nullity.
+
+Now go take a look at the current "Application#run" code.
+
+...
+
+That's what a lot of service code looks like. Especially after a few years of
+maintenance and added features.  
+
+Of course, a real would be even more complicated than that. Here you could still
+think that this code is pretty straightforward, just a simple cascade of
+check-and-calls that is not so hard to understand.
+You may be right, but we are only looking at null-checks on a dummy code.
+Imagine it being cluttered with real business cases and exceptions, try and
+catch from network failures or disk reads, and you could agree that this little
+business is soon lost in the noise.
+
+Did you notice that one null check is useless ?
+ServiceDE is never returning a null value, you can remove it, all tests will
+still pass.
+
+We won't see how to design, name and refactor everything here, we will only
+handle nullity.
