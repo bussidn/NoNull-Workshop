@@ -233,4 +233,7 @@ use "Optional#map" and "Optional#orElse" in "Application#run" to compose functio
 Optional[Optional[_]]
 There's a static method "Application#flatten" that will help you handle these,
 use it.
+Anytime you use "Optional#map" followed by "Application#flatten",
+use "Optional#flatMap" instead.
 ```
+
