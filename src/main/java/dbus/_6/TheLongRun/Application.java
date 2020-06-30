@@ -3,6 +3,7 @@ package dbus._6.TheLongRun;
 import dbus._6.TheLongRun.service.*;
 import dbus._6.TheLongRun.type.*;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 public class Application {
@@ -100,5 +101,9 @@ public class Application {
                     new ServiceFG(nullG)::serviceFG
             );
         }
+    }
+
+    public static <T> Optional<T> flatten(@SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Optional<T>> nested) {
+        return nested.orElseGet(Optional::empty);
     }
 }

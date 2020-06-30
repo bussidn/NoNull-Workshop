@@ -224,3 +224,13 @@ still pass.
 
 We won't see how to design, name and refactor everything here, we will only
 handle nullity.
+
+```
+make the services that needs it return Optional when it fits. 
+use "Optional#map" and "Optional#orElse" in "Application#run" to compose functions
+
+/!\ When using "Optional#map" you will have a lot of nested Optional :
+Optional[Optional[_]]
+There's a static method "Application#flatten" that will help you handle these,
+use it.
+```
