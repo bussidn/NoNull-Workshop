@@ -61,6 +61,10 @@ value is stored into a variable before being passed to the next function.
 
 But they both do the exact same thing.
 
+If you notice, we are able to compose two functions when the return type of the
+first one called is the same as the entry type of the second one we want to call.
+That the same type we used to store the intermediary variable in.
+
 # Production issues starts to kick in
 
 OK so your application is in production and handles most cases correctly.
